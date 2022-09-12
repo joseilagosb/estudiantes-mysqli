@@ -16,6 +16,7 @@ class Student
 
   public function add_student($forename, $surname)
   {
+    // Sentencia preparada a la cual le insertamos los parámetros por separado
     $stmt = $this->db->prepare("INSERT INTO students(student_no, surname, forename) VALUES (?, ?, ?)");
     $student_no = uniqid();
     $stmt->bind_param("sss", $student_no, $surname, $forename);

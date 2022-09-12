@@ -44,6 +44,7 @@
   padding: 10px;
 }
 
+/* Este elemento se mantiene invisible hasta que el usuario presiona uno de los botones 'ver notas del estudiante' (ver script index.js) */
 .student-marks {
   display: none;
   position: absolute;

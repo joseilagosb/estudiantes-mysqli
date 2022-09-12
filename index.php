@@ -3,6 +3,7 @@
 include("models/Student.php");
 
 // INDEX CONTROLLER
+
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   get_index();
 }
@@ -23,7 +24,7 @@ function get_index()
     // Inicialización del modelo
     $student_model = new Student($db);
 
-    // Consulta SQL
+    // Consulta SQL para solicitar todos los estudiantes en la bd
     $todos_los_estudiantes = $student_model->all_students();
   } catch (mysqli_sql_exception $e) {
     // El error se guarda en un arreglo que se puede visiblizar en pantalla por ejemplo
@@ -46,12 +47,15 @@ function post_index()
     // Inicialización del modelo
     $student_model = new Student($db);
 
-    $forename = $_POST["forename"];
-    $surname = $_POST["surname"];
+    // Extraemos de la solicitud POST los dos parámetros que recibimos del formulario
+    // Usamos 'htmlspecialchars' para prevenir código malicioso proveniente de los inputs de texto
+    $forename = htmlspecialchars($_POST["forename"], ENT_QUOTES, 'UTF-8');
+    $surname = htmlspecialchars($_POST["surname"], ENT_QUOTES, 'UTF-8');
 
     // Consulta SQL de inserción
     $student_model->add_student($forename, $surname);
 
+    // Adicionalmente se seleccionan todos los estudiantes para ser mostrados en la tabla
     $todos_los_estudiantes = $student_model->all_students();
   } catch (mysqli_sql_exception $e) {
     // El error se guarda en un arreglo que se puede visiblizar en pantalla por ejemplo
