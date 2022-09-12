@@ -1,0 +1,64 @@
+.error-message {
+  color: white;
+  font-weight: bold;
+  background-color: crimson;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.page-title {
+  color: crimson;
+  text-align: center;
+}
+
+.card {
+  position: relative;
+  border-radius: 10px;
+  color: lightcoral;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.card .title {
+  color: crimson;
+}
+
+.student-row .name {
+  display: inline-block;
+  font-style: italic;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.student-row .see-student-marks {
+  display: inline-block;
+}
+
+.form .field {
+  margin-bottom: 10px;
+}
+
+.form .field input {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.student-marks {
+  display: none;
+  position: absolute;
+  overflow-y: scroll;
+  top: 30px;
+  right: 30px;
+  width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: antiquewhite;
+}
+
+.student-marks .title {
+  text-align: center;
+  color: crimson;
+  margin-bottom: 20px;
+}
