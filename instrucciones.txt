@@ -1,4 +1,4 @@
-# Instrucciones
+Instrucciones
 
 1. Instalar XAMPP en tu computador.
 2. Descomprimir la carpeta en C:\xampp\htdocs en WINDOWS o /opt/lampp/htdocs en LINUX.
